@@ -5,6 +5,8 @@ app.geometry("448x448")
 app.resizable(False, False)
 
 print("Loading ML model...")
+import os
+os.environ['CUDA_VISIBLE_DEVICES'] = '-1'
 import keras.models
 mnist_model = keras.models.load_model("models/mnist")
 print("Initial loading complete. Finishing...")
